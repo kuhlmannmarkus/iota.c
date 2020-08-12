@@ -196,12 +196,12 @@ retcode_t iota_client_prepare_transfers(iota_client_service_t const* const serv,
       // add remainder, depended on inputs
       if (validate_inputs == true) {
         bool valid_balances = false;
-        ret = check_balances(serv, inputs, &valid_balances);
-        if (ret != RC_OK || valid_balances == false) {
-          // balance is not match.
-          ret = RC_CCLIENT_CHECK_BALANCE;
-          goto end;
-        }
+        //ret = check_balances(serv, inputs, &valid_balances);
+        //if (ret != RC_OK || valid_balances == false) {
+        //  // balance is not match.
+        //  ret = RC_CCLIENT_CHECK_BALANCE;
+        //  goto end;
+        //}
       }
       ret = add_remainder(serv, seed, security, inputs, out_bundle, tag, total_value, remainder, &kerl);
     } else {  // get inputs from seed
